@@ -14,10 +14,10 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://demo.devopscicd.xyz") // ✅ frontend domain
+                        .allowedOrigins("https://demo.devopscicd.xyz")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(true); // optional if you're using cookies or JWT in headers
+                        .allowCredentials(true);
             }
         };
     }

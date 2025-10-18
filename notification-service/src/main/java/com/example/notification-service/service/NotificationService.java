@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class NotificationService {
 
+    private final NotificationRepository notificationRepository;
+
     @Autowired
-    private NotificationRepository notificationRepository;
+    public NotificationService(NotificationRepository notificationRepository) {
+        this.notificationRepository = notificationRepository;
+    }
 
     public Notification sendNotification(Notification notification) {
         notification.setSentAt(LocalDateTime.now());
@@ -36,7 +40,12 @@ public class NotificationService {
         }).orElse(null);
     }
 
-    public void deleteNotification(Long id) {
-        notificationRepository.deleteById(id);
+    public boolean deleteNotification(Long id) {
+        if (notificationRepository.existsById(id)) {
+            notificationRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

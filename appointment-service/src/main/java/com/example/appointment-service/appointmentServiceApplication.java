@@ -1,12 +1,11 @@
-package com.example.notificationservice;
+package com.example.appointmentservice.entity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NotificationServiceApplication {
-
+public class AppointmentServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(NotificationServiceApplication.class, args);
+        SpringApplication.run(AppointmentServiceApplication.class, args);
     }
 }

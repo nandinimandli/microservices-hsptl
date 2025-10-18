@@ -13,8 +13,8 @@ public class Payment {
     private Long orderId;
     private Double amount;
 
-    private String status; // <-- add this
-    private LocalDateTime paymentDate; // <-- and this
+    private String status;
+    private LocalDateTime paymentDate;
 
     // Getters and Setters
     public Long getId() {

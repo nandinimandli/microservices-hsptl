@@ -1,4 +1,4 @@
-package com.example.notificationservice.config;
+package com.example.pharmacyservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

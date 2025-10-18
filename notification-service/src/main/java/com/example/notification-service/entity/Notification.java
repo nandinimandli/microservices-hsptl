@@ -4,16 +4,25 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "notifications")
 public class Notification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String message;
+
+    @Column(nullable = false)
     private String recipient;
+
     private String type;
+
+    @Column(name = "sent_at")
     private LocalDateTime sentAt;
+
+    @Column(name = "user_id")
     private Long userId;
 
     // Getters and Setters
