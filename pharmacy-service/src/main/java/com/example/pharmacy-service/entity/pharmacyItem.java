@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
-public class InventoryItem {
+public class PharmacyItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +15,9 @@ public class InventoryItem {
     private int stock;
 
     @ManyToOne
-    @JoinColumn(name = "inventory_id")
+    @JoinColumn(name = "pharmacy_id")
     @JsonBackReference
-    private Inventory inventory;
+    private Pharmacy pharmacy;
 
     // Getters and Setters
     public Long getId() {
@@ -44,15 +44,11 @@ public class InventoryItem {
         this.stock = stock;
     }
 
-    public int getQuantity() {
-        return stock;
+    public Pharmacy getPharmacy() {
+        return pharmacy;
     }
 
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
     }
 }

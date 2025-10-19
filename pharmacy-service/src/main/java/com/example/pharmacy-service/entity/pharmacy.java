@@ -2,11 +2,10 @@ package com.example.pharmacyservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
-public class Inventory {
+public class Pharmacy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,9 +13,9 @@ public class Inventory {
 
     private String warehouseName;
 
-    @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "pharmacy", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<InventoryItem> items;
+    private List<PharmacyItem> items;
 
     // Getters and Setters
     public Long getId() {
@@ -35,11 +34,14 @@ public class Inventory {
         this.warehouseName = warehouseName;
     }
 
-    public List<InventoryItem> getItems() {
+    public List<PharmacyItem> getItems() {
         return items;
     }
 
-    public void setItems(List<InventoryItem> items) {
+    public void setItems(List<PharmacyItem> items) {
         this.items = items;
+        if (items != null) {
+            items.forEach(item -> item.setPharmacy(this));
+        }
     }
 }

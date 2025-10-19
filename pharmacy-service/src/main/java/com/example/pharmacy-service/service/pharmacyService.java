@@ -1,49 +1,49 @@
 package com.example.pharmacyservice.service;
 
-import com.example.pharmacyservice.entity.Inventory;
-import com.example.pharmacyservice.entity.InventoryItem;
-import com.example.pharmacyservice.repository.InventoryItemRepository;
-import com.example.pharmacyservice.repository.InventoryRepository;
+import com.example.pharmacyservice.entity.Pharmacy;
+import com.example.pharmacyservice.entity.PharmacyItem;
+import com.example.pharmacyservice.repository.PharmacyItemRepository;
+import com.example.pharmacyservice.repository.PharmacyRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class InventoryService {
+public class PharmacyService {
 
-    private final InventoryItemRepository itemRepo;
-    private final InventoryRepository inventoryRepo;
+    private final PharmacyItemRepository itemRepo;
+    private final PharmacyRepository pharmacyRepo;
 
-    public InventoryService(InventoryItemRepository itemRepo, InventoryRepository inventoryRepo) {
+    public PharmacyService(PharmacyItemRepository itemRepo, PharmacyRepository pharmacyRepo) {
         this.itemRepo = itemRepo;
-        this.inventoryRepo = inventoryRepo;
+        this.pharmacyRepo = pharmacyRepo;
     }
 
-    public InventoryItem addItem(InventoryItem item, String warehouseName) {
-        Inventory inventory = inventoryRepo.findByWarehouseName(warehouseName)
+    public PharmacyItem addItem(PharmacyItem item, String pharmacyName) {
+        Pharmacy pharmacy = pharmacyRepo.findByPharmacyName(pharmacyName)
                 .orElseGet(() -> {
-                    Inventory newInventory = new Inventory();
-                    newInventory.setWarehouseName(warehouseName);
-                    return inventoryRepo.save(newInventory);
+                    Pharmacy newPharmacy = new Pharmacy();
+                    newPharmacy.setPharmacyName(pharmacyName);
+                    return pharmacyRepo.save(newPharmacy);
                 });
 
-        item.setInventory(inventory);
+        item.setPharmacy(pharmacy);
         return itemRepo.save(item);
     }
 
-    public List<InventoryItem> getItemsByWarehouse(String warehouseName) {
-        return itemRepo.findByInventoryWarehouseName(warehouseName);
+    public List<PharmacyItem> getItemsByPharmacy(String pharmacyName) {
+        return itemRepo.findByPharmacyPharmacyName(pharmacyName);
     }
 
-    public List<InventoryItem> getAllItems() {
+    public List<PharmacyItem> getAllItems() {
         return itemRepo.findAll();
     }
 
-    public InventoryItem getItemById(Long itemId) {
+    public PharmacyItem getItemById(Long itemId) {
         return itemRepo.findById(itemId).orElse(null);
     }
 
-    public InventoryItem updateItem(Long itemId, InventoryItem updatedItem) {
+    public PharmacyItem updateItem(Long itemId, PharmacyItem updatedItem) {
         return itemRepo.findById(itemId).map(item -> {
             item.setProductId(updatedItem.getProductId());
             item.setStock(updatedItem.getStock());

@@ -1,48 +1,48 @@
 package com.example.pharmacyservice.controller;
 
-import com.example.pharmacyservice.entity.InventoryItem;
-import com.example.pharmacyservice.service.InventoryService;
+import com.example.pharmacyservice.entity.PharmacyItem;
+import com.example.pharmacyservice.service.PharmacyService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/inventory")
-public class InventoryController {
+@RequestMapping("/pharmacy")
+public class PharmacyController {
 
-    private final InventoryService inventoryService;
+    private final PharmacyService pharmacyService;
 
-    public InventoryController(InventoryService inventoryService) {
-        this.inventoryService = inventoryService;
+    public PharmacyController(PharmacyService pharmacyService) {
+        this.pharmacyService = pharmacyService;
     }
 
     @PostMapping("/{warehouseName}")
-    public InventoryItem addItem(@RequestBody InventoryItem item, @PathVariable String warehouseName) {
-        return inventoryService.addItem(item, warehouseName);
+    public PharmacyItem addItem(@RequestBody PharmacyItem item, @PathVariable String warehouseName) {
+        return pharmacyService.addItem(item, warehouseName);
     }
 
     @GetMapping("/{warehouseName}")
-    public List<InventoryItem> getItems(@PathVariable String warehouseName) {
-        return inventoryService.getItemsByWarehouse(warehouseName);
+    public List<PharmacyItem> getItems(@PathVariable String warehouseName) {
+        return pharmacyService.getItemsByWarehouse(warehouseName);
     }
 
     @GetMapping("/item/{itemId}")
-    public InventoryItem getItemById(@PathVariable Long itemId) {
-        return inventoryService.getItemById(itemId);
+    public PharmacyItem getItemById(@PathVariable Long itemId) {
+        return pharmacyService.getItemById(itemId);
     }
 
     @GetMapping
-    public List<InventoryItem> getAllItems() {
-        return inventoryService.getAllItems();
+    public List<PharmacyItem> getAllItems() {
+        return pharmacyService.getAllItems();
     }
 
     @PutMapping("/item/{itemId}")
-    public InventoryItem updateItem(@PathVariable Long itemId, @RequestBody InventoryItem item) {
-        return inventoryService.updateItem(itemId, item);
+    public PharmacyItem updateItem(@PathVariable Long itemId, @RequestBody PharmacyItem item) {
+        return pharmacyService.updateItem(itemId, item);
     }
 
     @DeleteMapping("/item/{itemId}")
     public void deleteItem(@PathVariable Long itemId) {
-        inventoryService.removeItem(itemId);
+        pharmacyService.removeItem(itemId);
     }
 }
