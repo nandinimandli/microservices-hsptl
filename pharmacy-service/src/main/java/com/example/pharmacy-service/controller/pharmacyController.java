@@ -16,14 +16,14 @@ public class PharmacyController {
         this.pharmacyService = pharmacyService;
     }
 
-    @PostMapping("/{warehouseName}")
-    public PharmacyItem addItem(@RequestBody PharmacyItem item, @PathVariable String warehouseName) {
-        return pharmacyService.addItem(item, warehouseName);
+    @PostMapping("/{pharmacyName}")
+    public PharmacyItem addItem(@RequestBody PharmacyItem item, @PathVariable String pharmacyName) {
+        return pharmacyService.addItem(item, pharmacyName);
     }
 
-    @GetMapping("/{warehouseName}")
-    public List<PharmacyItem> getItems(@PathVariable String warehouseName) {
-        return pharmacyService.getItemsByWarehouse(warehouseName);
+    @GetMapping("/{pharmacyName}")
+    public List<PharmacyItem> getItems(@PathVariable String pharmacyName) {
+        return pharmacyService.getItemsByPharmacy(pharmacyName);
     }
 
     @GetMapping("/item/{itemId}")
