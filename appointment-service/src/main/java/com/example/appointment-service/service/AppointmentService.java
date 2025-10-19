@@ -1,7 +1,7 @@
 package com.example.appointmentservice.service;
 
-import com.hospital.appointmentservice.entity.Appointment;
-import com.hospital.appointmentservice.repository.AppointmentRepository;
+import com.example.appointmentservice.entity.Appointment;
+import com.example.appointmentservice.repository.AppointmentRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

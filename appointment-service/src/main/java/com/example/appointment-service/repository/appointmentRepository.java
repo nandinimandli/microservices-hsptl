@@ -1,6 +1,6 @@
 package com.example.appointmentservice.entity;
 
-import com.hospital.appointmentservice.entity.Appointment;
+import com.example.appointmentservice.entity.Appointment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
