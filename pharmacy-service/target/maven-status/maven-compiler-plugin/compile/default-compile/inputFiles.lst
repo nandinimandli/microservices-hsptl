@@ -1,8 +1,8 @@
-C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\controller\pharmacyController.java
-C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\entity\pharmacy.java
-C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\pharmacyServiceApplication.java
-C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\service\pharmacyService.java
+C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\controller\PharmacyController.java
+C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\entity\Pharmacy.java
+C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\PharmacyServiceApplication.java
+C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\service\PharmacyService.java
 C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\config\WebConfig.java
-C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\entity\pharmacyItem.java
-C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\repository\pharmacyItemRepository.java
-C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\repository\pharmacyRepository.java
+C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\entity\PharmacyItem.java
+C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\repository\PharmacyItemRepository.java
+C:\Users\Teju\Documents\projects\ecommerce-microservices\pharmacy-service\src\main\java\com\example\pharmacy-service\repository\PharmacyRepository.java
