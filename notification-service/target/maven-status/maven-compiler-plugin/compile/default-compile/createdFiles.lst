@@ -1,0 +1,7 @@
+com\example\notificationservice\controller\NotificationController.class
+com\example\notificationservice\entity\Notification.class
+com\example\notificationservice\service\NotificationService.class
+com\example\notificationservice\config\WebConfig$1.class
+com\example\notificationservice\config\WebConfig.class
+com\example\notificationservice\NotificationServiceApplication.class
+com\example\notificationservice\repository\NotificationRepository.class

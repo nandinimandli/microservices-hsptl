@@ -1,0 +1,8 @@
+com\example\appointmentservice\entity\AppointmentServiceApplication.class
+com\example\appointmentservice\controller\AppointmentController.class
+com\example\appointmentservice\entity\Appointment.class
+com\example\appointmentservice\entity\AppointmentItem.class
+com\example\appointmentservice\config\WebConfig$1.class
+com\example\appointmentservice\config\WebConfig.class
+com\example\appointmentservice\service\AppointmentService.class
+com\example\appointmentservice\repository\AppointmentRepository.class
