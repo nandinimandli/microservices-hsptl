@@ -23,7 +23,7 @@ public class PharmacyService {
         Pharmacy pharmacy = pharmacyRepo.findByPharmacyName(pharmacyName)
                 .orElseGet(() -> {
                     Pharmacy newPharmacy = new Pharmacy();
-                    newPharmacy.setPharmacyName(pharmacyName);
+                    newPharmacy.setName(pharmacyName); // corrected line
                     return pharmacyRepo.save(newPharmacy);
                 });
 
