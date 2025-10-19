@@ -1,4 +1,4 @@
-package com.example.appointmentservice.entity;
+package com.example.appointmentservice.repository;
 
 import com.example.appointmentservice.entity.Appointment;
 import org.springframework.data.jpa.repository.JpaRepository;
