@@ -1,4 +1,4 @@
-package com.hospital.appointmentservice.service;
+package com.example.appointmentservice.service;
 
 import com.hospital.appointmentservice.entity.Appointment;
 import com.hospital.appointmentservice.repository.AppointmentRepository;
