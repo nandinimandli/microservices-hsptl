@@ -1,3 +1,9 @@
+package com.example.pharmacyservice.entity;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import java.util.List;
+
 @Entity
 public class Pharmacy {
 
@@ -5,13 +11,12 @@ public class Pharmacy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String pharmacyName; // renamed from warehouseName
+    private String pharmacyName;
 
     @OneToMany(mappedBy = "pharmacy", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<PharmacyItem> items;
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
