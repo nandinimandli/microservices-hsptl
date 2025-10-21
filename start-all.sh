@@ -3,17 +3,14 @@
 
 # Define array of services
 services=(
-  user-service
-  product-service
-  order-service
-  cart-service
-  payment-service
-  inventory-service
-  notification-service
-  review-service
-  admin-service
-  discount-service
-  search-service
+ admin-service
+ appointment-service
+ notification-service
+ patient-service
+ payment-service
+ pharmacy-service
+ 
+ 
 )
 
 # Base directory (update if needed)
