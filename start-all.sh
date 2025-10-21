@@ -3,6 +3,13 @@
 
 # Define array of services
 services=(
+ admin-service
+ appointment-service
+ notification service
+ patient-service
+ payment-service
+ pharmacy-service
+ 
  
 )
 
