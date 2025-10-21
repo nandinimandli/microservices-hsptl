@@ -5,7 +5,7 @@
 services=(
  admin-service
  appointment-service
- notification service
+ notification-service
  patient-service
  payment-service
  pharmacy-service
