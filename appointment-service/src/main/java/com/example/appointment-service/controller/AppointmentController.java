@@ -15,7 +15,7 @@ public class AppointmentController {
 
     private final AppointmentService appointmentService;
 
-    // Use @Autowired for proper injection
+    // Constructor-based injection
     public AppointmentController(AppointmentService appointmentService) {
         this.appointmentService = appointmentService;
     }
@@ -63,14 +63,14 @@ public class AppointmentController {
         }
     }
 
-    // Delete appointment
+    // Delete appointment (handles void return type)
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteAppointment(@PathVariable Long id) {
-        boolean deleted = appointmentService.deleteAppointment(id);
-        if (deleted) {
-            return ResponseEntity.ok("Appointment deleted");
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Appointment not found");
+        try {
+            appointmentService.deleteAppointment(id);
+            return ResponseEntity.ok("Appointment deleted successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Appointment not found or could not be deleted");
         }
     }
 }
